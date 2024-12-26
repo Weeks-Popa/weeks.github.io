@@ -1,0 +1,119 @@
+/* Общие стили */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #312e40;
+    color: #ffffff;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* Шапка */
+header {
+    background-color: #8d278d;
+    color: #fff;
+    text-align: center;
+    padding: 50px 0;
+}
+
+header h1 {
+    margin-bottom: 10px;
+}
+
+/* Секция с кнопками */
+.links-buttons {
+    padding: 30px 0;
+}
+
+.links-buttons h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.button-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    justify-items: center;
+}
+
+.button {
+    display: inline-block;
+    padding: 15px 25px;
+    background-color: #8d278d;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.button:hover {
+    background-color: #7e247e;
+}
+
+/* Секция с картинками */
+.links-images {
+    padding: 30px 0;
+}
+
+.links-images h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    justify-items: center;
+}
+
+.image-link {
+    display: block;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.image-link:hover {
+    transform: scale(1.05);
+}
+
+.image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 5px;
+}
+
+/* Подвал */
+footer {
+    background-color: #1e1c25;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+    header {
+    padding: 30px 0;
+    }
+    .button-grid {
+    grid-template-columns: 1fr; /* Одна колонка на маленьких экранах */
+    }
+    .image-grid {
+        grid-template-columns: 1fr; /* Одна колонка на маленьких экранах */
+    }
+}
