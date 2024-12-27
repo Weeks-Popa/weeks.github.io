@@ -3,8 +3,11 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #312e40; /* Темный фон */
-    color: #fff; /* Белый текст */
+    background-color: #111;
+    color: #fff;
+    display: flex;          /* Добавляем flexbox */
+    flex-direction: column; /* Делаем flex-контейнер вертикальным */
+    min-height: 100vh;     /* Минимальная высота равна высоте экрана */
 }
 
 .container {
@@ -12,11 +15,12 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px 0;
+     flex: 1;   /* Занимает все свободное пространство */
 }
 
 /* Шапка */
 header {
-    background-color: #8d278d; /* Темный фон для шапки */
+    background-color: #222;
     color: #fff;
     text-align: center;
     padding: 50px 0;
@@ -37,31 +41,35 @@ header h1 {
 }
 
 .panel {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, max-content)); /* Увеличиваем minmax */
-    gap: 15px;
-    justify-content: center;
+   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 15px;
 }
 .panel-item {
-    display: flex;
+  display: flex;
     align-items: center;
-    padding: 12px 20px; /* Увеличиваем padding */
+    padding: 12px 20px;
     text-decoration: none;
     color: #fff;
     border-radius: 5px;
     transition: background-color 0.3s ease;
     margin-bottom: 1px;
+    flex-basis: calc(50% - 10px);
+    margin-right: 5px;
+    max-width: calc(50% - 10px);
 }
 .panel-item:hover {
   opacity: 0.8;
 }
 .panel-item i {
-    margin-right: 12px; /* Увеличиваем отступ */
-    font-size: 1.5em; /* Увеличиваем размер иконок */
+    margin-right: 12px;
+    font-size: 1.5em;
 }
 .panel-item span {
   white-space: nowrap;
-    font-size: 1.2em; /* Увеличиваем размер текста */
+    font-size: 1.2em;
 }
 
 
@@ -84,6 +92,15 @@ header h1 {
 .discord {
     background-color: #5865F2;
 }
+.streams {
+    background-color: #9147FF;
+    order: 1;
+    text-align: center;
+     display: inline-flex;
+    margin-top: 10px;
+    align-self: center;
+}
+
 /* Секция с картинками */
 .links-images {
     padding: 30px 0;
@@ -121,11 +138,14 @@ header h1 {
 
 /* Подвал */
 footer {
-    background-color: #1e1c25;
+    background-color: #222;
     color: #fff;
     text-align: center;
     padding: 20px 0;
+     margin-top: auto; /* отталкиваем подвал вниз */
+     margin-bottom: 0; /* убираем отступ снизу */
 }
+
 /* Адаптивность */
 @media (max-width: 768px) {
     .container {
@@ -135,7 +155,15 @@ footer {
     padding: 30px 0;
     }
     .panel {
-      grid-template-columns: 1fr;
+      flex-direction: column;
+      align-items: center;
+    }
+    .panel-item {
+         width: 100%;
+        margin-right: 0;
+    }
+    .streams {
+        align-self: center;
     }
     .image-grid {
         grid-template-columns: 1fr;
