@@ -3,8 +3,8 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #312e40;
-    color: #ffffff;
+    background-color: #312e40; /* Темный фон */
+    color: #fff; /* Белый текст */
 }
 
 .container {
@@ -16,7 +16,7 @@ body {
 
 /* Шапка */
 header {
-    background-color: #8d278d;
+    background-color: #8d278d; /* Темный фон для шапки */
     color: #fff;
     text-align: center;
     padding: 50px 0;
@@ -26,39 +26,64 @@ header h1 {
     margin-bottom: 10px;
 }
 
-/* Секция с кнопками */
-.links-buttons {
+/* Секция с панелью ссылок */
+.links-panel {
     padding: 30px 0;
 }
 
-.links-buttons h2 {
+.links-panel h2 {
     margin-bottom: 20px;
     text-align: center;
 }
 
-.button-grid {
+.panel {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-    justify-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(220px, max-content)); /* Увеличиваем minmax */
+    gap: 15px;
+    justify-content: center;
 }
-
-.button {
-    display: inline-block;
-    padding: 15px 25px;
-    background-color: #8d278d;
-    color: #fff;
+.panel-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px; /* Увеличиваем padding */
     text-decoration: none;
+    color: #fff;
     border-radius: 5px;
     transition: background-color 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: center;
+    margin-bottom: 1px;
+}
+.panel-item:hover {
+  opacity: 0.8;
+}
+.panel-item i {
+    margin-right: 12px; /* Увеличиваем отступ */
+    font-size: 1.5em; /* Увеличиваем размер иконок */
+}
+.panel-item span {
+  white-space: nowrap;
+    font-size: 1.2em; /* Увеличиваем размер текста */
 }
 
-.button:hover {
-    background-color: #7e247e;
+
+.youtube {
+    background-color: #e74c3c;
+}
+.tiktok {
+    background-color: #2c3e50;
 }
 
+.telegram {
+    background-color: #3498db;
+}
+.dzen {
+    background-color: #f39c12;
+}
+.vk{
+    background-color: #3498db;
+}
+.discord {
+    background-color: #5865F2;
+}
 /* Секция с картинками */
 .links-images {
     padding: 30px 0;
@@ -79,7 +104,7 @@ header h1 {
 .image-link {
     display: block;
     border-radius: 5px;
-    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s ease;
 }
 
@@ -101,7 +126,6 @@ footer {
     text-align: center;
     padding: 20px 0;
 }
-
 /* Адаптивность */
 @media (max-width: 768px) {
     .container {
@@ -110,10 +134,10 @@ footer {
     header {
     padding: 30px 0;
     }
-    .button-grid {
-    grid-template-columns: 1fr; /* Одна колонка на маленьких экранах */
+    .panel {
+      grid-template-columns: 1fr;
     }
     .image-grid {
-        grid-template-columns: 1fr; /* Одна колонка на маленьких экранах */
+        grid-template-columns: 1fr;
     }
 }
